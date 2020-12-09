@@ -23,10 +23,11 @@ class RedirectManager
         } else {
             if (!preg_match('|^\d{4}/\d{2}|', $oldSlug)) {
                 // Slug didn't have a date. We need to redirect to the page with a date
-                $createdAt = new \DateTime($post->created_at);
+                $publishedAt = new \DateTime($post->published_at);
+
                 $newUrl = sprintf(
                     '/%s/%s',
-                    $createdAt->format('Y/m'),
+                    $publishedAt->format('Y/m'),
                     $post->slug
                 );
                 $shouldRedirect = true;
