@@ -20,20 +20,9 @@ include_once WP_PLUGIN_DIR . '/redirection/models/group.php';
 
 class Importer
 {
-    /**
-     * @var EventDispatcherInterface
-     */
-    protected $dispatcher;
-
-    /**
-     * @var LoaderInterface
-     */
-    protected $loader;
-
-    /**
-     * @var WriterInterface
-     */
-    protected $writer;
+    protected EventDispatcherInterface $dispatcher;
+    protected LoaderInterface $loader;
+    protected WriterInterface $writer;
 
     /**
      * @var TransformerInterface[]
